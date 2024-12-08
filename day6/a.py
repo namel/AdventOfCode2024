@@ -4,7 +4,6 @@ get_next_pos = lambda pos, direction: (pos[0] + NEXT_POS_INCR[direction][0], pos
 get_map_element = lambda pos, map_lines: map_lines[pos[1]][pos[0]] if 0 <= pos[0] < len(map_lines[0]) and 0 <= pos[1] < len(map_lines) else None
 looping_obstructions_count = 0
 
-# I think you actually have to place an obstacle there, because it can bounce twice
 def travel(pos, direction, visited, map_lines, generate_obstacle):
     global looping_obstructions_count
     while get_map_element(pos, map_lines) is not None:
@@ -22,8 +21,6 @@ def travel(pos, direction, visited, map_lines, generate_obstacle):
             map_lines[next_pos[1]][next_pos[0]] = '.'
         pos = next_pos
         
-# re-write this with a traversal than can call itself.
-# keep only the one visited (but make it directional)
 with open('day6/input.txt', 'r') as input:
     map_lines = [[c for c in line] for line in input.readlines()]
     guard_pos = [(guard_row.index('^'), guard_row_ix) for guard_row_ix, guard_row in enumerate(map_lines) if '^' in guard_row][0]
