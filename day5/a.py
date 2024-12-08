@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-
 blocked_predecessors = defaultdict(set)
 
 def confirm_rules(update):
@@ -37,7 +36,6 @@ def fix_update_done(update):
     return True
 
 def fix_update(update):
-    print(f"starting to fix {update}")
     update_is_fixed = False
     while not update_is_fixed:
         update_is_fixed = fix_update_done(update)
