@@ -1,9 +1,4 @@
 
-def concat_sub_result(result, acc):
-    if str(result).startswith(str(acc)):
-        return int(str(result)[len(str(acc)):])
-    return None
-
 def has_valid_combination(result, l, acc, check_concat):
     if len(l) == 0:
         return result if result == acc else 0
