@@ -2,7 +2,7 @@ from collections import defaultdict
 from functools import reduce
 
 dist, similarity_score = 0, 0
-with open('./day1/input1.txt', 'r') as input:
+with open('./day1/input.txt', 'r') as input:
 
     # calculate distances between pairs of items
     data = [line.strip().split('   ') for line in input.readlines()]
